@@ -13,7 +13,10 @@ function App() {
     if (evt.key === "Enter"){
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then(res => res.json())
-        .then(result => setWeather(result))
+        .then(result => {
+          setWeather(result)
+          setQuery('')
+        })
     }
   }
 
@@ -42,7 +45,7 @@ function App() {
         ? ((weather.main.temp > 16) 
           ? 'app warm' 
           : 'app') // background to cold image of less than 16
-        : 'app warm'}> //default background to warm image
+        : 'app warm'}>
       <main>
         <div className='search-box'>
           <input
