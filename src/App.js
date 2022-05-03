@@ -37,7 +37,12 @@ function App() {
 
 
   return (
-    <div className="app">
+    <div className={
+      (typeof weather.main != "undefined") 
+        ? ((weather.main.temp > 16) 
+          ? 'app warm' 
+          : 'app') // background to cold image of less than 16
+        : 'app warm'}> //default background to warm image
       <main>
         <div className='search-box'>
           <input
