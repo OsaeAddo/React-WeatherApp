@@ -1,8 +1,10 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   font-family: 'montseratt', sans-serif;
@@ -100,3 +102,8 @@ main {
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
